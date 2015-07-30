@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>shoping cart</title>
+</head>
+<style>
+	*{
+		margin:0px;
+		padding:0px;
+		box-sizing:border-box;
+	}
+	.expender{
+		width:300px;
+		margin:30px;
+	}
+	.expender h1{
+		
+		width:100%;
+		height:30px;
+		background:#000;
+		line-height:30px;
+		padding-left:10px;
+		color:#fff;
+		font-size:16px;
+		cursor:pointer;
+	}
+	.expender .content{
+		width:100%;
+		padding:10px;
+		border:1px solid #000;
+		border-top:none;
+	}
+</style>
+<body>
+	<div ng-controller="someController">
+	    <div ng-repeat="con in content">
+	    	<expander expander-title="{{con.title}}">
+			{{con.text}}
+			</expander>
+	    </div>
+	</div>
+	
+</body>
+<script type="text/javascript" src="../angular.js"></script>
+<script type="text/javascript" src="myApp.js"></script>
+</html>

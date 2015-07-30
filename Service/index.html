@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>$watch</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<style>
+	.container{
+		margin-top:30px;
+	}
+	.gray{
+		color:#999;
+	}
+</style>
+<body>
+	<div class="container">
+	    <div class="panel panel-danger">
+		  <div class="panel-heading"><h3>你的购物车</h3></div>
+		  <div class="panel-body" ng-controller="CartController">
+		   	<table class="table table-bordered table-striped">
+			  	<tr ng-repeat="item in items">
+			      <td><h5>{{item.title}}</h5></td>
+			      <td><input ng-model="item.quantity" class="form-control"/></td>
+			      <td>{{item.price | currency:'￥'}}</td>
+			      <td class="red">{{item.price*item.quantity | currency:'￥'}}</td>
+			      <td><button ng-click="remove($index)" class="btn btn-danger btn-sm">删除</button></td>
+			    </tr>
+			</table>
+			<h6 class="gray">购物满500元减总价的10%</h6>
+			<table class="table table-bordered table-striped">
+			  	<tr>
+			      <td>总价: <span class="del">{{bill.all | currency:'￥'}}</span></td>
+			    </tr>
+			    <tr>
+			      <td>折扣: <span class="red">{{bill.discount | currency:'￥'}}</span></td>
+			    </tr>
+			    <tr>
+			      <td>现价: <span class="green">{{bill.now | currency:'￥'}}</span></td>
+			    </tr>
+			</table>
+		  </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../angular.js"></script>
+<script type="text/javascript" src="myApp.js"></script>
+</html>

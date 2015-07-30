@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>shoping cart</title>
+</head>
+<body>
+	<div ng-controller="CartController">
+		<h1>你的订单</h1>
+		<div ng-repeat="item in items">
+			<span ng-bind="item.title"></span>
+			<input type="text" ng-model="item.quantity">
+			<span ng-bind="item.price | currency"></span>
+			<span ng-bind="item.price*item.quantity |currency"></span>
+			<button ng-click="remove($index)">删除</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../angular.js"></script>
+<script type="text/javascript" src="myApp.js"></script>
+</html>

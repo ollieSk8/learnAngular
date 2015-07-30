@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-css</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<style>
+	.container{
+		margin-top:10px;
+	}
+	</style>
+</head>
+<body>
+   <div class="container">
+   	 <div class="list-group" ng-controller ="Restaurant">
+		<ul>
+		    <li class="list-group-item" ng-repeat="restaurant in restaurants" ng-class="{active:$index==selRow}" 
+		    ng-mouseenter="choose($index)">
+		      <h4 class="list-group-item-heading">{{restaurant.name}}</h4>
+		      <p class="list-group-item-text">
+		      	 <span>{{restaurant.food}}</span>
+		      	 <span>{{restaurant.price}}</span>
+		      </p>
+		     
+		    </li>
+		</ul>
+	</div>
+   </div>
+</body>
+<script type="text/javascript" src="../angular.js"></script>
+<script type="text/javascript" src="myApp.js"></script>
+</html>
